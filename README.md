@@ -37,7 +37,7 @@ The project utilizes the **"Wind Turbine SCADA Dataset"** obtained from Kaggle. 
 
 
 
-2. Feature Engineering 
+### 2. Feature Engineering 
 
 * **Temporal Extraction:** Extracted Month, Day, Hour, and Minutes from timestamps.
 
