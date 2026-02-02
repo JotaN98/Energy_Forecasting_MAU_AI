@@ -1,8 +1,9 @@
 # Wind Turbine Power Output Prediction
 
 **Authors:** João Domingos & Wilmer H. Jacobsson 
-
 **Course:** Artificial Intelligence for Data Science
+**Institution:** Malmö University, Dept. of Computer Science and Media Technology  
+**Date:** January 2026
 
 ## 📌 Project Overview
 
