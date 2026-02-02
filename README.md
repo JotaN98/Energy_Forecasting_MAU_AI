@@ -16,34 +16,16 @@ This repository contains the implementation of a machine learning pipeline that 
 
 The project utilizes the **"Wind Turbine SCADA Dataset"** obtained from Kaggle. The data was collected from a wind turbine in Turkey throughout 2018.
 
-* 
-**Source:** [Wind Turbine SCADA Dataset on Kaggle](https://www.kaggle.com/datasets/berkerisen/wind-turbine-scada-dataset/data) 
+* **Source:** [Wind Turbine SCADA Dataset on Kaggle](https://www.kaggle.com/datasets/berkerisen/wind-turbine-scada-dataset/data) 
 
 
 * **Resolution:** 10-minute intervals
 * **Features:**
-* 
-`Date/Time`: Timestamp of the measurement 
-
-
-* 
-`LV ActivePower (kW)`: Actual power generated (Target Variable) 
-
-
-* 
-`Wind Speed (m/s)`: Average wind speed 
-
-
-* 
-`Theoretical_Power_Curve (KWh)`: Theoretical power generation based on manufacturer specifications 
-
-
-* 
-`Wind Direction (°)`: Automatic turbine direction 
-
-
-
-
+* `Date/Time`: Timestamp of the measurement 
+* `LV ActivePower (kW)`: Actual power generated (Target Variable) 
+* `Wind Speed (m/s)`: Average wind speed 
+* `Theoretical_Power_Curve (KWh)`: Theoretical power generation based on manufacturer specifications 
+* `Wind Direction (°)`: Automatic turbine direction 
 
 ## 🛠️ Methodology
 
@@ -51,47 +33,26 @@ The project utilizes the **"Wind Turbine SCADA Dataset"** obtained from Kaggle. 
 
 * **Outlier Handling:** Negative `ActivePower` values were analyzed. Measurements with negative power at low wind speeds (< 3.5 m/s) were identified as non-generating phases (consumption) rather than sensor faults and set to zero.
 
-
-* 
-**Time Series Split:** To prevent data leakage, a Time Series Split was used instead of random shuffling, ensuring the model trains on past data to predict future events.
+* **Time Series Split:** To prevent data leakage, a Time Series Split was used instead of random shuffling, ensuring the model trains on past data to predict future events.
 
 
 
 2. Feature Engineering 
 
-* 
-**Temporal Extraction:** Extracted Month, Day, Hour, and Minutes from timestamps.
-
+* **Temporal Extraction:** Extracted Month, Day, Hour, and Minutes from timestamps.
 
 * **Cyclical Encoding:**
-* 
-**Seasons:** Mapped from months and One-Hot Encoded.
-
-
-* 
-**Day/Night:** Binary encoded based on a static 6 AM – 6 PM window appropriate for the latitude.
-
-
-* 
-**Wind Direction:** Transformed into two 2D coordinate features (Sine and Cosine) to preserve the circular nature of directional data ().
-
-
-
-
-* 
-**Scaling:** Applied Standard Scaler () to numerical features like Wind Speed and Theoretical Power Curve.
-
-
+* **Seasons:** Mapped from months and One-Hot Encoded.
+* **Day/Night:** Binary encoded based on a static 6 AM – 6 PM window appropriate for the latitude.
+* **Wind Direction:** Transformed into two 2D coordinate features (Sine and Cosine) to preserve the circular nature of directional data ().
+* **Scaling:** Applied Standard Scaler () to numerical features like Wind Speed and Theoretical Power Curve.
 
 ### 3. Models
 
 Two supervised learning models were implemented and compared:
 
 1. **Linear Regression:** Serves as a baseline, assuming a linear relationship between features and output.
-2. 
-**Random Forest Regression:** An ensemble method capable of capturing non-linear relationships, such as the cubic dependence of power on wind speed.
-
-
+2. **Random Forest Regression:** An ensemble method capable of capturing non-linear relationships, such as the cubic dependence of power on wind speed.
 
 ## 📊 Results
 
@@ -105,38 +66,6 @@ The Random Forest model demonstrated slightly superior performance, effectively 
 Table Data Source: 
 
 While both models performed well due to the strong correlation of the theoretical power curve, the RMSE (~370 kW) suggests that further error reduction is needed for commercial grid dispatch.
-
-## 💻 Installation & Usage
-
-### Prerequisites
-
-The project requires Python and the following libraries:
-
-* `pandas`
-* `numpy`
-* `matplotlib`
-* `seaborn`
-* `scikit-learn`
-* `kagglehub` (for automatic dataset downloading)
-
-### Running the Project
-
-1. Clone this repository.
-2. Install dependencies:
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn kagglehub
-
-```
-
-
-3. Open and run the Jupyter Notebook:
-```bash
-jupyter notebook final_project.ipynb
-
-```
-
-
-*Note: The notebook is configured to automatically download the dataset using `kagglehub` upon execution.*
 
 ## 📚 References
 
