@@ -21,11 +21,11 @@ The project utilizes the **"Wind Turbine SCADA Dataset"** obtained from Kaggle. 
 
 * **Resolution:** 10-minute intervals
 * **Features:**
-* `Date/Time`: Timestamp of the measurement 
-* `LV ActivePower (kW)`: Actual power generated (Target Variable) 
-* `Wind Speed (m/s)`: Average wind speed 
-* `Theoretical_Power_Curve (KWh)`: Theoretical power generation based on manufacturer specifications 
-* `Wind Direction (°)`: Automatic turbine direction 
+  * `Date/Time`: Timestamp of the measurement 
+  * `LV ActivePower (kW)`: Actual power generated (Target Variable) 
+  * `Wind Speed (m/s)`: Average wind speed 
+  * `Theoretical_Power_Curve (KWh)`: Theoretical power generation based on manufacturer specifications 
+  * `Wind Direction (°)`: Automatic turbine direction 
 
 ## 🛠️ Methodology
 
