@@ -42,10 +42,10 @@ The project utilizes the **"Wind Turbine SCADA Dataset"** obtained from Kaggle. 
 * **Temporal Extraction:** Extracted Month, Day, Hour, and Minutes from timestamps.
 
 * **Cyclical Encoding:**
- * **Seasons:** Mapped from months and One-Hot Encoded.
- * **Day/Night:** Binary encoded based on a static 6 AM – 6 PM window appropriate for the latitude.
- * **Wind Direction:** Transformed into two 2D coordinate features (Sine and Cosine) to preserve the circular nature of directional data ().
- * **Scaling:** Applied Standard Scaler () to numerical features like Wind Speed and Theoretical Power Curve.
+  * **Seasons:** Mapped from months and One-Hot Encoded.
+  * **Day/Night:** Binary encoded based on a static 6 AM – 6 PM window appropriate for the latitude.
+  * **Wind Direction:** Transformed into two 2D coordinate features (Sine and Cosine) to preserve the circular nature of directional data ().
+  * **Scaling:** Applied Standard Scaler () to numerical features like Wind Speed and Theoretical Power Curve.
 
 ### 3. Models
 
